@@ -32,13 +32,13 @@
         }
 
         function successHandler() {
-            alert("received notifications success");
-            console.log(arguments);
+            $("#app-status-ul").("<h2>received notifications success</h2>");
+            $("#app-status-ul").append(JSON.stringify(arguments));
         }
 
         function errorHandler() {
-            alert("received notifications failed");
-            console.log(arguments);
+            $("#app-status-ul").("<h2>received notifications error</h2>");
+            $("#app-status-ul").append(JSON.stringify(arguments));
         }
 
         function onNotificationGCM(e) {
@@ -90,6 +90,14 @@
         }
 
     </script>
+    <style>
+
+        #app-status-ul {
+            min-height: 50px;
+            background-color: #eee;
+
+        }
+    </style>
 
 </head>
 <body>
