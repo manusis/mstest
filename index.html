@@ -19,12 +19,12 @@
 
     <script>
         var pushNotification;
-        $("#app-status-ul").("<li>adding listener</li>");
+        $("#app-status-ul").append("<li>adding listener</li>");
 
 
 
         function onDeviceReady() {
-            $("#app-status-ul").("<li>device is ready</li>");
+            $("#app-status-ul").append("<li>device is ready</li>");
 
             // Now safe to use the PhoneGap API
             pushNotification = window.plugins.pushNotification;
@@ -39,12 +39,12 @@
         document.addEventListener("deviceready", onDeviceReady, false);
 
         function successHandler() {
-            $("#app-status-ul").("<li>received notifications success</li>");
+            $("#app-status-ul").append("<li>received notifications success</li>");
             $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
         }
 
         function errorHandler() {
-            $("#app-status-ul").("<li>received notifications error</li>");
+            $("#app-status-ul").append("<li>received notifications error</li>");
             $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
         }
 
