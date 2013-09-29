@@ -1,5 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="in.mystore.gemco" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.example"
+        versionCode="10"
+        version   = "1.0.0">
     <name>Gemco</name>
     <description>
         Gemco Rocks
@@ -9,6 +13,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <gap:platform name="android" />
+
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <gap:plugin name="com.adobe.plugins.pushplugin" />
