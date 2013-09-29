@@ -19,9 +19,13 @@
 
     <script>
         var pushNotification;
-        document.addEventListener("deviceready", onDeviceReady, false);
+        $("#app-status-ul").("<li>adding listener</li>");
+
+
 
         function onDeviceReady() {
+            $("#app-status-ul").("<li>device is ready</li>");
+
             // Now safe to use the PhoneGap API
             pushNotification = window.plugins.pushNotification;
             if (device.platform == 'android' || device.platform == 'Android') {
@@ -31,14 +35,17 @@
             }
         }
 
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+
         function successHandler() {
-            $("#app-status-ul").("<h2>received notifications success</h2>");
-            $("#app-status-ul").append(JSON.stringify(arguments));
+            $("#app-status-ul").("<li>received notifications success</li>");
+            $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
         }
 
         function errorHandler() {
-            $("#app-status-ul").("<h2>received notifications error</h2>");
-            $("#app-status-ul").append(JSON.stringify(arguments));
+            $("#app-status-ul").("<li>received notifications error</li>");
+            $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
         }
 
         function onNotificationGCM(e) {
@@ -93,7 +100,7 @@
     <style>
 
         #app-status-ul {
-            min-height: 50px;
+            min-height: 100px;
             background-color: #eee;
 
         }
@@ -104,7 +111,7 @@
 <div class="m-container ">
     <ui-view></ui-view>
 
-    <div id="app-status-ul"></div>
+    <div id="app-status-ul"><h2> Messages will appear here</h2></div>
 </div>
 
 </body>
