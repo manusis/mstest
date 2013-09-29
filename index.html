@@ -19,7 +19,6 @@
 
     <script>
         var pushNotification;
-        $("#app-status-ul").append("<li>adding listener</li>");
 
 
 
@@ -35,6 +34,10 @@
             }
         }
 
+        $("document").ready(function() {
+            $("#app-status-ul").append("<li>inside document ready</li>");
+
+        });
 
         document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -111,7 +114,7 @@
 <div class="m-container ">
     <ui-view></ui-view>
 
-    <div id="app-status-ul"><h2> Messages will appear here</h2></div>
+    <ul id="app-status-ul"><h2> Messages will appear here</h2></ul>
 </div>
 
 </body>
