@@ -38,7 +38,7 @@
         $("document").ready(function() {
 
             $("#app-status-ul").append("<li>inside document ready</li>");
-            $("#app-status-ul").append("<li>cordova is " + cordova + "</li>");
+            $("#app-status-ul").append("<li>cordova is " + (cordova?"present":"absent") + "</li>");
 
 
         });
