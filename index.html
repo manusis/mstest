@@ -17,7 +17,7 @@
     <!--<script src="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.js"></script>-->
     <!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>-->
     <script src="phonegap.js"></script>
-    <script src="pushplugin.js"></script>
+    <!--<script src="pushplugin.js"></script>-->
 
     <script>
         var pushNotification;
@@ -42,7 +42,7 @@
         });
 
         document.addEventListener("deviceready", onDeviceReady, false);
-
+/*
         function successHandler() {
             $("#app-status-ul").append("<li>received notifications success</li>");
             $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
@@ -100,6 +100,7 @@
                     break;
             }
         }
+        */
 
     </script>
     <style>
@@ -113,11 +114,12 @@
 
 </head>
 <body>
-<div class="m-container ">
-    <!--<ui-view></ui-view>-->
+<!--<div class="m-container ">-->
+    <!--&lt;!&ndash;<ui-view></ui-view>&ndash;&gt;-->
 
-    <ul id="app-status-ul"><h2> Messages will appear here</h2></ul>
-</div>
+    <!--<ul id="app-status-ul"><h2> Messages will appear here</h2></ul>-->
+<!--</div>-->
+<ul id="app-status-ul"><h2> Messages will appear here</h2></ul>
 
 </body>
 </html>
