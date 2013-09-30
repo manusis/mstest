@@ -16,7 +16,7 @@
     <!--<link href="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.css" rel="stylesheet" media="screen">-->
     <!--<script src="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.js"></script>-->
     <!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>-->
-    <script src="phonegap.js"></script>
+    <!--<script src="phonegap.js"></script>-->
     <!--<script src="pushplugin.js"></script>-->
 
     <script>
@@ -34,15 +34,16 @@
 //               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 //            }
 //        }
+        $.getScript('phonegap.js', function() { alert('Load was performed.'); })
 
         $("document").ready(function() {
-            var flag = phonegap?"present":"absent";
-            var flag2 = cordova?"present":"absent";
-            console.log(cordova);
-            console.log(phonegap);
+//            var flag = phonegap?"present":"absent";
+//            var flag2 = cordova?"present":"absent";
+//            console.log(cordova);
+//            console.log(phonegap);
             $("#app-status-ul").append("<li>before cordova print</li>");
             $("#app-status-ul").append("<li>before document ready</li>");
-            $("#app-status-ul").append("<li>cordova is " + flag + flag2 + "</li>");
+          //  $("#app-status-ul").append("<li>cordova is " + flag + flag2 + "</li>");
             $("#app-status-ul").append("<li>inside document ready</li>");
 
 
