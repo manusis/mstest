@@ -20,28 +20,33 @@
     <!--<script src="pushplugin.js"></script>-->
 
     <script>
-        var pushNotification;
+        //var pushNotification;
 
-
-
-        function onDeviceReady() {
-            $("#app-status-ul").append("<li>device is ready</li>");
-
-            // Now safe to use the PhoneGap API
-            pushNotification = window.plugins.pushNotification;
-            if (device.platform == 'android' || device.platform == 'Android') {
-                pushNotification.register(successHandler, errorHandler,{"senderID":"856591973129","ecb":"onNotificationGCM"});
-            } else {
-               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
-            }
-        }
+        $("#app-status-ul").append("<li>" + cordova + "</li>");
+//
+//        function onDeviceReady() {
+//            $("#app-status-ul").append("<li>device is ready</li>");
+//
+//            // Now safe to use the PhoneGap API
+//            pushNotification = window.plugins.pushNotification;
+//            if (device.platform == 'android' || device.platform == 'Android') {
+//                pushNotification.register(successHandler, errorHandler,{"senderID":"856591973129","ecb":"onNotificationGCM"});
+//            } else {
+//               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+//            }
+//        }
 
         $("document").ready(function() {
             $("#app-status-ul").append("<li>inside document ready</li>");
 
         });
 
-        document.addEventListener("deviceready", onDeviceReady, false);
+        $("document").bind("deviceready", function(event) {
+            $("#app-status-ul").append("<li>device is ready</li>");
+
+        });
+
+        //document.addEventListener("deviceready", onDeviceReady, false);
 /*
         function successHandler() {
             $("#app-status-ul").append("<li>received notifications success</li>");
