@@ -22,7 +22,6 @@
     <script>
         //var pushNotification;
 
-        $("#app-status-ul").append("<li>" + cordova + "</li>");
 //
 //        function onDeviceReady() {
 //            $("#app-status-ul").append("<li>device is ready</li>");
@@ -37,7 +36,10 @@
 //        }
 
         $("document").ready(function() {
+
             $("#app-status-ul").append("<li>inside document ready</li>");
+            $("#app-status-ul").append("<li>cordova is " + cordova + "</li>");
+
 
         });
 
