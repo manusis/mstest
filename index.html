@@ -36,9 +36,10 @@
 //        }
 
         $("document").ready(function() {
-
-            $("#app-status-ul").append("<li>inside document ready</li>");
+            $("#app-status-ul").append("<li>before cordova print</li>");
+            $("#app-status-ul").append("<li>before document ready</li>");
             $("#app-status-ul").append("<li>cordova is " + (cordova?"present":"absent") + "</li>");
+            $("#app-status-ul").append("<li>inside document ready</li>");
 
 
         });
@@ -126,7 +127,7 @@
 
     <!--<ul id="app-status-ul"><h2> Messages will appear here</h2></ul>-->
 <!--</div>-->
-<ul id="app-status-ul"><h2> Messages will appear here</h2></ul>
+<ul id="app-status-ul"><li><h2> Messages will appear here</h2></li></ul>
 
 </body>
 </html>
