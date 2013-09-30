@@ -23,7 +23,8 @@
     <script src="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
     <script src="phonegap.js"></script>
-    <!--<script src="pushplugin.js"></script>-->
+    <script src="pushplugin.js"></script>
+    <script src="PushNotification.js"></script>
 
     <script>
         //var pushNotification;
@@ -32,13 +33,13 @@
         function onDeviceReady() {
             $("#app-status-ul").append("<li>device is ready</li>");
 
-//            // Now safe to use the PhoneGap API
-//            pushNotification = window.plugins.pushNotification;
-//            if (device.platform == 'android' || device.platform == 'Android') {
-//                pushNotification.register(successHandler, errorHandler,{"senderID":"856591973129","ecb":"onNotificationGCM"});
-//            } else {
-//               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
-//            }
+            // Now safe to use the PhoneGap API
+            pushNotification = window.plugins.pushNotification;
+            if (device.platform == 'android' || device.platform == 'Android') {
+                pushNotification.register(successHandler, errorHandler,{"senderID":"856591973129","ecb":"onNotificationGCM"});
+            } else {
+               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+            }
         }
 //        $.getScript('phonegap.js', function() { alert('Load was performed.'); })
 
@@ -61,7 +62,7 @@
 //        });
 
         document.addEventListener("deviceready", onDeviceReady, false);
-/*
+
         function successHandler() {
             $("#app-status-ul").append("<li>received notifications success</li>");
             $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
@@ -119,7 +120,7 @@
                     break;
             }
         }
-        */
+
 
     </script>
     <style>
