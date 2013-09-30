@@ -36,9 +36,12 @@
 //        }
 
         $("document").ready(function() {
+            var flag = phonegap?"present":"absent";
+            var flag2 = cordova?"present":"absent";
+
             $("#app-status-ul").append("<li>before cordova print</li>");
             $("#app-status-ul").append("<li>before document ready</li>");
-            $("#app-status-ul").append("<li>cordova is " + (cordova?"present":"absent") + "</li>");
+            $("#app-status-ul").append("<li>cordova is " + flag + flag2 + "</li>");
             $("#app-status-ul").append("<li>inside document ready</li>");
 
 
