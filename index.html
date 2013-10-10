@@ -5,7 +5,7 @@
 <html class="no-js">
 <!--<![endif]-->
 <head>
-    <!--<base href="http://gemco.mystore.in/" target="_blank">-->
+    <!--<base href="http://gemco.mystore.manu:3000/" target="_blank">-->
     <title>Gemco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
@@ -15,118 +15,21 @@
 
     <script src="http://cdn.mystore.in/assets/jquery-1.8.3.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="http://cdn.mystore.in/assets/jquery-1.8.3.min.js"%3E%3C/script%3E'))</script>
-    <base href="http://gemco.mystore.in/"></base>
+    <base href="http://gemco.mystore.manu:3000/"></base>
     <script src="http://cdn.mystore.in/assets/angular-1.1.5.min.js"></script>
     <script src="http://cdn.mystore.in/assets/angular-ui-router-0.0.1.min.js"></script>
     <script src="http://cdn.mystore.in/assets/require-2.1.8.min.js"></script>
-    <script src="http://gemco.mystore.in/store/info.js"></script>
-    <script src="http://gemco.mystore.in/js/mystore.js"></script>
+    <script src="http://gemco.mystore.manu:3000/store/info.js"></script>
+    <script src="http://gemco.mystore.manu:3000/js/mystore.js"></script>
+    <script src="http://gemco.mystore.manu:3000/js/mobile.js"></script>
+
     <link href="http://cdn.mystore.in/s/523af5bf68d96de86f000001/assets/51b1c428c8808d951d000001/gemco.css" rel="stylesheet" media="screen">
     <link href="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.css" rel="stylesheet" media="screen">
     <script src="http://cdn.mystore.in/assets/bootstrap-3.0.0.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
 
-    <script>
-        //var pushNotification;
 
-
-        function onDeviceReady() {
-            $("#app-status-ul").append("<li>device is ready</li>");
-
-            // Now safe to use the PhoneGap API
-            pushNotification = window.plugins.pushNotification;
-            if (device.platform == 'android' || device.platform == 'Android') {
-                pushNotification.register(successHandler, errorHandler,{"senderID":"856591973129","ecb":"onNotificationGCM"});
-            } else {
-               // pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
-            }
-        }
-//        $.getScript('phonegap.js', function() { alert('Load was performed.'); })
-
-        $("document").ready(function() {
-//            var flag = phonegap?"present":"absent";
-//            var flag2 = cordova?"present":"absent";
-//            console.log(cordova);
-//            console.log(phonegap);
-            $("#app-status-ul").append("<li>before cordova print</li>");
-            $("#app-status-ul").append("<li>before document ready</li>");
-          //  $("#app-status-ul").append("<li>cordova is " + flag + flag2 + "</li>");
-            $("#app-status-ul").append("<li>inside document ready</li>");
-
-
-        });
-
-//        $("document").bind("deviceready", function(event) {
-//            $("#app-status-ul").append("<li>device is ready</li>");
-//
-//        });
-
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        function successHandler() {
-            $("#app-status-ul").append("<li>received notifications success</li>");
-            $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
-        }
-
-        function errorHandler() {
-            $("#app-status-ul").append("<li>received notifications error</li>");
-            $("#app-status-ul").append("<li>"+ JSON.stringify(arguments) + "</li>");
-        }
-
-        function onNotificationGCM(e) {
-            $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-
-            switch( e.event )
-            {
-                case 'registered':
-                    if ( e.regid.length > 0 )
-                    {
-                      //  console.log(e, angular.toJson(e, true));
-                        $("#app-status-ul").append('<li><pre>'+ angular.toJson(e, true) + '</pre></li>');
-                        $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
-                        // Your GCM push server needs to know the regID before it can push to this device
-                        // here is where you might want to send it the regID for later use.
-                        console.log("regID = " + e.regID);
-                    }
-                    break;
-
-                case 'message':
-                    // if this flag is set, this notification happened while we were in the foreground.
-                    // you might want to play a sound to get the user's attention, throw up a dialog, etc.
-                    if (e.foreground)
-                    {
-                        $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
-
-                        // if the notification contains a soundname, play it.
-                        var my_media = new Media("/android_asset/www/"+e.soundname);
-                        my_media.play();
-                    }
-                    else
-                    {   // otherwise we were launched because the user touched a notification in the notification tray.
-                        if (e.coldstart)
-                            $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-                        else
-                            $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-                    }
-
-                    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
-                    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
-                    break;
-
-                case 'error':
-                    $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
-                    break;
-
-                default:
-                    $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
-                    break;
-            }
-        }
-
-
-    </script>
     <style>
-
         #app-status-ul {
             min-height: 100px;
             background-color: #eee;
