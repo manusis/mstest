@@ -14,19 +14,19 @@ var message = new gcm.Message({
     }
 });
 
-var sender = new gcm.Sender('856591973129');
+var sender = new gcm.Sender('AIzaSyB7-CBKLwu1ZdDTpvilxqQ4Hx3xhrX3IMQ');
 var registrationIds = [];
 
 // Optional
 // add new key-value in data object
-message.addDataWithKeyValue('key1','message1');
-message.addDataWithKeyValue('key2','message2');
+//message.addDataWithKeyValue('key1','message1');
+//message.addDataWithKeyValue('key2','message2');
 
 // or add a data object
-message.addDataWithObject({
-    key1: 'message1',
-    key2: 'message2'
-});
+//message.addDataWithObject({
+//    key1: 'message1',
+//    key2: 'message2'
+//});
 
 // or with backwards compability of previous versions
 message.addData('key1','message1');
@@ -39,7 +39,7 @@ message.timeToLive = 3;
 // END Optional
 
 // At least one required
-//registrationIds.push('regId1');
+registrationIds.push('APA91bEeSGQLn4QLbv1uYc2yoc7O_K6K15YQLktffibB0iPeyU6VeeG9ANE-0DOxTNvZGq_Gzz8E6ZQdTEJ-GfFWnzU_wSvWHSninzfxwyf5IeaMqkR17gtiI_IplSNQAeQ05dCZWxUD');
 //registrationIds.push('regId2');
 
 /**
