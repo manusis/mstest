@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "i"
-        versionCode="in.mystore.mstest"
+        id        = "com.guptamotor"
+        versionCode="com.guptamotor"
         version   = "1.0.0">
     <name>Gemco</name>
     <description>
