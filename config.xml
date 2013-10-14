@@ -12,6 +12,8 @@
         Rajiv Kumar
     </author>
     <content src="index.html" />
+    <access origin="http://gemco.mystore.in" />
+
     <access origin="*" />
     <gap:platform name="android" />
 
