@@ -16,6 +16,7 @@
 
     <access origin="*" />
     <gap:platform name="android" />
+    <gap:platform name="ios" />
 
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
